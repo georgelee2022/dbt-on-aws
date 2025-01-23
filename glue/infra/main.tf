@@ -291,10 +291,10 @@ resource "aws_s3_bucket" "default_bucket" {
   tags = local.tags
 }
 
-resource "aws_s3_bucket_acl" "default_bucket" {
-  bucket = aws_s3_bucket.default_bucket.id
-  acl    = "private"
-}
+# resource "aws_s3_bucket_acl" "default_bucket" {
+#   bucket = aws_s3_bucket.default_bucket.id
+#   acl    = "private"
+# }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "default_bucket" {
   bucket = aws_s3_bucket.default_bucket.bucket

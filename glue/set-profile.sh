@@ -3,7 +3,9 @@
 dbt_role_arn=$(terraform -chdir=./infra output --raw glue_interactive_session_role_arn)
 dbt_s3_location=$(terraform -chdir=./infra output --raw default_bucket_name)
 
-cat << EOF > ~/.dbt/profiles.yml
+mkdir .dbt
+
+cat <<EOF >.dbt/profiles.yml
 dbt_glue_proj:
   outputs:
     dev:
